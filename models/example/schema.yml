@@ -19,3 +19,18 @@ models:
             tests:
                 - unique
                 - not_null
+
+    - name: stg_customers
+      description: "makes sure the id is unique and not empty"
+      columns:
+      - name: customer_id
+        tests:
+          - unique
+          - not_null
+
+    - name: fct_customer_summary
+      description: "makes sure the name isn't empty"
+      columns:
+        - name: customer_name
+          tests:
+            - not_null
