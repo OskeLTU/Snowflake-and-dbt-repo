@@ -1,3 +1,10 @@
+{{
+    config(
+        materialized='table'
+    )
+}}
+
+
 select
     customer_name,
     signup_date,

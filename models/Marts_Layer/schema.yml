@@ -1,0 +1,9 @@
+version: 2
+
+models: 
+    - name: fct_customer_summary
+      description: "makes sure the name isn't empty"
+      columns:
+        - name: customer_name
+          tests:
+            - not_null
