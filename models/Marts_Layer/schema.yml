@@ -2,8 +2,13 @@ version: 2
 
 models: 
     - name: fct_customer_summary
-      description: "makes sure the name isn't empty"
+      description: "Summary of customer data"
       columns:
-        - name: customer_name
+        - name: customer_id
           tests:
             - not_null
+        - name: customer_tier
+          tests:
+            - accepted_values:
+                arguments:
+                  values: ['VIP', 'Standard']
