@@ -1,13 +1,9 @@
-{{
-    config(
-        materialized='table'
-    )
-}}
 
-
-select
-    customer_name,
-    signup_date,
-    count(*) as total_records
-from {{ref("stg_customers")}}
-group by 1, 2
+SELECT
+    customer_id,
+    COUNT(order_id) as total_orders,
+    SUM(order_amount) as total_spend,
+    AVG(order_amount) as avg_order_amount,
+    MAX(order_date) as last_order_date
+FROM {{ ref('stg_mock_orders')}}
+GROUP BY customer_id 
