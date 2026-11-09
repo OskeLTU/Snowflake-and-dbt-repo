@@ -7,6 +7,14 @@ models:
         - name: customer_id
           tests:
             - not_null
+
+
+    - name: dim_customers
+      description: "data about the customers"
+      columns:
+        - name: customer_id
+          tests:
+            - not_null
         - name: customer_tier
           tests:
             - accepted_values:
