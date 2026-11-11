@@ -19,6 +19,10 @@
 * **Purpose:** Presentation-ready, wide reporting models tailored for specific dashboards or business teams.
 * **What it does:** Frequently joins core mart dimensions.
 
+### 5. Macros
+* **Purpose:** Reusable functions, that work like in any other coding language. To save space, time and to not repeat yourself.
+* **What it does:** Holds the macro .sql files, ready for use in other .sql files.
+
 ## Other concepts
 * **Singular Test:** A custom SQL query saved in the `tests/` folder designed to check business logic (e.g., ensuring `signup_date <= current_date`). If the query returns any rows, the test fails.
 * **Generic Test:** Declarative tests defined in `schema.yml` files (like `unique`, `not_null`, `accepted_values`) used to protect structural integrity.
