@@ -1,0 +1,22 @@
+version: 2
+
+models: 
+    - name: fct_customer_summary
+      description: "Summary of customer data"
+      columns:
+        - name: customer_id
+          tests:
+            - not_null
+
+
+    - name: dim_customers
+      description: "data about the customers"
+      columns:
+        - name: customer_id
+          tests:
+            - not_null
+        - name: customer_tier
+          tests:
+            - accepted_values:
+                arguments:
+                  values: ['VIP', 'Standard']

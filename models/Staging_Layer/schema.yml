@@ -9,10 +9,14 @@ models:
         tests:
           - unique
           - not_null
-
-    - name: fct_customer_summary
-      description: "makes sure the name isn't empty"
+    - name: stg_mock_orders
+      description: 'To test the auto generated set of values'
       columns:
-        - name: customer_name
+        - name: order_id
           tests:
+            - unique
             - not_null
+        - name: order_amount
+          tests: 
+            - not_null
+
