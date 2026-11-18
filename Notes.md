@@ -23,6 +23,10 @@
 * **Purpose:** Reusable functions, that work like in any other coding language. To save space, time and to not repeat yourself.
 * **What it does:** Holds the macro `.sql` files, ready for use in other `.sql` files.
 
+### 6. Snapshots
+* **Purpose:** Is a historical audit trail in a seperate folder
+* **What it does:** Automatically compares your source data against the snapshot table on every run, preserving old records and adding `dbt_valid_from` and `dbt_valid_to` timestamps whenever a source row is updated or overwritten.
+
 ## Other concepts
 * **Singular Test:** A custom SQL query saved in the `tests/` folder designed to check business logic (e.g., ensuring `signup_date <= current_date`). If the query returns any rows, the test fails.
 * **Generic Test:** Declarative tests defined in `schema.yml` files (like `unique`, `not_null`, `accepted_values`) used to protect structural integrity.

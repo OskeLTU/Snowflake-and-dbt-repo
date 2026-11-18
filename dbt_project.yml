@@ -41,4 +41,8 @@ models:
     Intermidiate_Layer:
       +materialized: view
     Marts_Layer:
-      +materialized: table
+      core:
+        +materialized: table
+      incremental: 
+        +materialized: incremental
+        +unique_key: 'order_id'
