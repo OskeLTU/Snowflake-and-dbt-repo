@@ -1,8 +1,9 @@
 SELECT
-    SEQ4() as customer_id,
+    SEQ4() + 1 AS customer_id,
     CASE
-        WHEN UNIFORM(1, 10, RANDOM()) = 1 THEN 'VIP'
+        WHEN SEQ4() + 1 = 2 THEN 'VIP'
+        WHEN MOD(SEQ4(), 10) = 0 THEN 'VIP'
         ELSE 'Standard'
-    end as customer_tier,
-    DATEADD('day', -UNIFORM(365, 730, RANDOM()), CURRENT_DATE()) as signup_date
+    END AS customer_tier,
+    DATEADD('day', -MOD(SEQ4(), 365), '2026-01-01'::DATE) AS signup_date
 FROM TABLE(GENERATOR(ROWCOUNT => 1000))
